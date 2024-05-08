@@ -15,7 +15,7 @@
         <div id="popup" class="popup" style="display: none;">
             <h2>Obrigado pelo agendamento!</h2>
             <p>Sua consulta foi agendada com sucesso.</p>
-            <a href="paciente.html">
+            <a href="menu_paciente.html">
                 <button type="button">Voltar para a página inicial</button>
             </a>
         </div>
@@ -158,7 +158,7 @@
                     <li>Data e horário:</li>
                 </ul>
                 
-                <button onclick="popup()" type="button">Agendar</button>
+                <button onclick="popup(); saveSummaryToLocalStorage()" type="button">Agendar</button>
                 
             </div>
         </div>
@@ -211,15 +211,16 @@
             selectedProceduresText += procedureName + ', ';
             totalPrice += procedurePrice;
         }
+
+        
     
         var selectedDay = document.querySelector('.calendar-table td[style="background-color: lightblue;"]');
-        var selectedTime = document.querySelector('.horas li[style="background-color: lightblue;"]');
-    
+        
+        console.log(selectedDay.textContent, selectedTime.textContent)
         var summary = {
-            procedures: selectedProceduresText,
-            totalPrice: totalPrice,
-            date: selectedDay.textContent,
-            time: selectedTime.textContent
+            procedimento: selectedProceduresText,
+            preco: totalPrice,
+            date: selectedDay.textContent
         };
     
         localStorage.setItem('consultaAdicionada', JSON.stringify(summary));
