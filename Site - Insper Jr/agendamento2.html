@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Site</title>
+    <!-- Estilos CSS podem ser adicionados aqui -->
+    <link rel="stylesheet" href="css/agendamento2.css">
+</head>
+
+<body>
+    <main>
+        <!--Crie um popup que aparecerá ao clicar no agendar-->
+        <div id="popup" class="popup" style="display: none;">
+            <h2>Obrigado pelo agendamento!</h2>
+            <p>Sua consulta foi agendada com sucesso.</p>
+            <a href="paciente.html">
+                <button type="button">Voltar para a página inicial</button>
+            </a>
+        </div>
+        <div class="sidebar">
+            <!--quero o logo da clinica na sidebar tambem-->
+            <a href="index.html" class="logo_header">
+                <img class="logo_header" src="img/logo.png" alt="Logo da Clínica">
+            </a>
+            <h2>
+                Menu
+            </h2>
+            <ul class="acoes">
+                <li><a href="#">Início</a></li>
+                <li><a href="#">Consultas</a></li>
+                <li><a href="#">Sair</a></li>
+            </ul>
+        </div>
+
+        <div class="content">
+            <div class="boas_vindas">
+                <img class="usuario" src="img/usuario.png" alt="">
+                <h1>Fulano de Tal</h1>
+            </div>
+            <!--Quero fazer uma área de busca de procedimentos, seguida dos procedimentos mais agendados, e por fim um calendário com escolha de horários-->
+            <div class="search-area">
+                <input type="text" placeholder="Buscar procedimentos" id="searchInput">
+                <button class="botao" onclick="searchProcedure()">Buscar</button>
+            </div>
+
+            <div class="popular-procedures">
+                <h2>O que você procura?</h2>
+                <ul>
+
+                    <li id="proc1" onmouseover="showDescription('description1')">
+                        <h3>Preenchimento</h3>
+                        <p>Preço: R$ 3000,00</p>
+                        <div id="description1" class="procedure-description"></div>
+                        <input type="checkbox" id="checkbox1"
+                            onchange="handleCheckboxChange('proc1', this.checked); calculateTotalPrice(); updateSummary()">
+                        <!--Precisa tambem ter um botao select, se a pessoa quiser realizar esse procedimento-->
+                    </li>
+                    <li id="proc2" onmouseover="showDescription('description2')" onmouseout="hideDescription()">
+                        <h3>Consulta Geral</h3>
+                        <p>Preço: R$ 700,00</p>
+                        <div id="description2" class="procedure-description"></div>
+                        <input type="checkbox" id="checkbox2"
+                            onchange="handleCheckboxChange('proc2', this.checked); calculateTotalPrice(); updateSummary()">
+                    </li>
+                    <li id="proc3" onmouseover="showDescription('description3')" onmouseout="hideDescription()">
+                        <h3>Botox</h3>
+                        <p>Preço: R$ 2500,00</p>
+                        <div id="description3" class="procedure-description"></div>
+                        <input type="checkbox" id="checkbox3"
+                            onchange="handleCheckboxChange('proc3', this.checked); calculateTotalPrice(); updateSummary()">
+                    </li>
+                    <li id="proc4" onmouseover="showDescription('description4')" onmouseout="hideDescription()">
+                        <h3>Microagulhamento</h3>
+                        <p>Preço: R$ 800,00</p>
+                        <div id="description4" class="procedure-description"></div>
+                        <input type="checkbox" id="checkbox4"
+                            onchange="handleCheckboxChange('proc4', this.checked); calculateTotalPrice(); updateSummary()">
+                    </li>
+                    <li id="proc5" onmouseover="showDescription('description5')" onmouseout="hideDescription()">
+                        <h3>Peeling</h3>
+                        <p>Preço: R$ 850,00</p>
+                        <div id="description5" class="procedure-description"></div>
+                        <input type="checkbox" id="checkbox5"
+                            onchange="handleCheckboxChange('proc5', this.checked); calculateTotalPrice(); updateSummary()">
+                    </li>
+                    <li id="proc6" onmouseover="showDescription('description6')" onmouseout="hideDescription()">
+                        <h3>Laser de CO2</h3>
+                        <p>Preço: R$ 1000,00</p>
+                        <div id="description6" class="procedure-description"></div>
+                        <input type="checkbox" id="checkbox6"
+                            onchange="handleCheckboxChange('proc6', this.checked); calculateTotalPrice(); updateSummary()">
+                    </li>
+                    <li id="proc7" onmouseover="showDescription('description7')" onmouseout="hideDescription()">
+                        <h3>Ultrassom</h3>
+                        <p>Preço: R$ 5500,00</p>
+                        <div id="description7" class="procedure-description"></div>
+                        <input type="checkbox" id="checkbox7"
+                            onchange="handleCheckboxChange('proc7', this.checked); calculateTotalPrice(); updateSummary()">
+                    </li>
+                </ul>
+
+            </div>
+
+            <div class="calendar">
+                
+                <div class="horarios">
+                    <h2>Escolha um horário</h2>
+                    <ul class="horas">
+                        <li>08:00</li>
+                        <li>09:00</li>
+                        <li>10:00</li>
+                        <li>11:00</li>
+                        <li>12:00</li>
+                        <li>13:00</li>
+                        <li>14:00</li>
+                        <li>15:00</li>
+                        <li>16:00</li>
+                        <li>17:00</li>
+                        <li>18:00</li>
+                        <li>19:00</li>
+                        <li>20:00</li>
+                    </ul>
+                </div>
+                <h2>Escolha um dia</h2>
+                <div class="calendar-container">
+                    <div class="calendar-header">
+                                <button class="prev" onclick="changeMonth(-1)"><</button>
+                                <h3 id="monthYear">Maio 2024</h3>
+                                <button class="next" onclick="changeMonth(1)">></button>
+                    </div>
+                    
+                    <table class="calendar-table">
+                        <thead>
+                            <tr>
+                                <th>Dom</th>
+                                <th>Seg</th>
+                                <th>Ter</th>
+                                <th>Qua</th>
+                                <th>Qui</th>
+                                <th>Sex</th>
+                                <th>Sáb</th>
+                            </tr>
+                        </thead>
+                        <tbody id="calendarDays">
+                            
+                        </tbody>
+                    </table>
+                    
+                </div>
+            </div>
+            <div class="resumo">
+                <h2>Resumo do agendamento</h2>
+                <ul>
+                    <li>Procedimentos selecionados:</li>
+                    <li>Preço total:</li>
+                    <li>Data e horário:</li>
+                </ul>
+                
+                <button onclick="popup()" type="button">Agendar</button>
+                
+            </div>
+        </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <ul>
+                    <li class="title">Fones</li>
+                    <li>(11) 1111-1111</li>
+                    <li>(11) 2222-2222</li>
+                    <li>(11) 3333-3333</li>
+                </ul>
+                <ul>
+                    <li class="title">WhatsApp</li>
+                    <li>(11) 99999-9999</li>
+                </ul>
+                <ul>
+                    <li class="title">Email</li>
+                    <li>atendimento@clinicadratania.com.br</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <ul>
+                    <li class="title">Endereço</li>
+                    <li>Rua Lopes Neto 56, 2° Andar, Itaim Bibi, São Paulo / SP</li>
+                </ul>
+                <ul>
+                    <li class="title">Dra. Tânia</li>
+                    <li>CRM XXXXXX</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+<script>
+    function saveSummaryToLocalStorage() {
+        var selectedProcedures = document.querySelectorAll('.popular-procedures li input[type="checkbox"]:checked');
+        var totalPrice = 0;
+        var selectedProceduresText = '';
+    
+        for (var i = 0; i < selectedProcedures.length; i++) {
+            var procedure = selectedProcedures[i].parentNode;
+            var procedureName = procedure.querySelector('h3').textContent;
+            var procedurePrice = parseFloat(procedure.querySelector('p').textContent.replace('Preço: R$ ', ''));
+    
+            selectedProceduresText += procedureName + ', ';
+            totalPrice += procedurePrice;
+        }
+    
+        var selectedDay = document.querySelector('.calendar-table td[style="background-color: lightblue;"]');
+        var selectedTime = document.querySelector('.horas li[style="background-color: lightblue;"]');
+    
+        var summary = {
+            procedures: selectedProceduresText,
+            totalPrice: totalPrice,
+            date: selectedDay.textContent,
+            time: selectedTime.textContent
+        };
+    
+        localStorage.setItem('consultaAdicionada', JSON.stringify(summary));
+    }
+    const username = localStorage.getItem('username');
+    const boasVindas = document.querySelector('.boas_vindas');
+    boasVindas.innerHTML = `
+        <img class="usuario" src="img/usuario.png" alt="">
+        <h1>Olá,</h1>
+        <h1>${username}!</h1>
+    `;
+    
+    function popup() {
+        document.getElementById("popup").style.display = "block";
+    }
+
+    // Função para voltar para a página inicial
+    function voltar() {
+        window.location.href = "index.html"; // Substitua "index.html" pelo nome do seu arquivo inicial
+    }
+    function generateCalendarDays() {
+        var calendarDays = document.getElementById('calendarDays');
+        var currentDate = new Date();
+        var currentMonth = currentDate.getMonth();
+        var currentYear = currentDate.getFullYear();
+        var daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+        var firstDayOfMonth = new Date(currentYear, currentMonth, 1).getDay();
+
+        calendarDays.innerHTML = '';
+
+        var row = document.createElement('tr');
+        for (var i = 0; i < firstDayOfMonth; i++) {
+            var emptyCell = document.createElement('td');
+            row.appendChild(emptyCell);
+        }
+
+        for (var day = 1; day <= daysInMonth; day++) {
+            var cell = document.createElement('td');
+            cell.textContent = day;
+            cell.style.textAlign = 'center'; // Add this line to align the number in the center
+            cell.addEventListener('click', function () {
+                // Code to handle the click event and select/deselect the day for the appointment
+                var selectedDay = this.textContent;
+                console.log('Selected day:', selectedDay);
+                // Add your code to change the design or behavior when a day is clicked
+                if (this.style.backgroundColor === 'lightblue') {
+                    this.style.backgroundColor = ''; // Deselect the day
+                    removeSelectedDayFromSummary(selectedDay);
+                } else {
+                    this.style.backgroundColor = 'lightblue'; // Select the day
+                    addSelectedDayToSummary(selectedDay);
+                }
+            });
+            row.appendChild(cell);
+
+            if ((firstDayOfMonth + day - 1) % 7 === 6 || day === daysInMonth) {
+                calendarDays.appendChild(row);
+                row = document.createElement('tr');
+            }
+        }
+    }
+    generateCalendarDays();
+    function addSelectedDayToSummary(selectedDay) {
+        var selectedTime = document.querySelector('.horas li[style="background-color: lightblue;"]');
+        var summaryDay = document.querySelector('.resumo li:nth-child(3)');
+        if (selectedTime) {
+            summaryDay.textContent = 'Data e horário: ' + selectedDay + '/05 ' + selectedTime.textContent;
+        } else {
+            summaryDay.textContent = 'Data e horário: ' + selectedDay + '/05';
+        }
+    }
+    function addSelectedTimeToSummary(selectedTime) {
+        var selectedDay = document.querySelector('.calendar-days td[style="background-color: lightblue;"]');
+        var summaryDay = document.querySelector('.resumo li:nth-child(3)');
+        if (selectedDay) {
+            summaryDay.textContent = summaryDay.textContent + selectedTime.textContent;
+        }
+    }
+
+
+    function removeSelectedDayFromSummary(selectedDay) {
+        var summaryDay = document.querySelector('.resumo li:nth-child(3)');
+        summaryDay.textContent = 'Data e horário:';
+    }
+    
+    function selectTime() {
+        var timeList = document.querySelectorAll('.horas li');
+
+        for (var i = 0; i < timeList.length; i++) {
+            var time = timeList[i];
+
+            time.addEventListener('click', function () {
+                if (this.style.backgroundColor === 'lightblue') {
+                    this.style.backgroundColor = ''; // Deselect the time
+                } else {
+                    this.style.backgroundColor = 'lightblue'; // Select the time
+                    addSelectedTimeToSummary(this.textContent);
+                }
+            });
+        }
+    }
+    
+
+    selectTime();
+
+    function updateSummary() {
+        var selectedProcedures = document.querySelectorAll('.popular-procedures li input[type="checkbox"]:checked');
+        var totalPrice = 0;
+        var selectedProceduresText = '';
+
+        for (var i = 0; i < selectedProcedures.length; i++) {
+            var procedure = selectedProcedures[i].parentNode;
+            var procedureName = procedure.querySelector('h3').textContent;
+            var procedurePrice = parseFloat(procedure.querySelector('p').textContent.replace('Preço: R$ ', ''));
+            
+            selectedProceduresText += procedureName + ', ';
+            totalPrice += procedurePrice;
+        }
+
+        selectedProceduresText = selectedProceduresText.slice(0, -2); // Remove the last comma and space
+
+        var summaryProcedures = document.querySelector('.resumo li:nth-child(1)');
+        var summaryTotalPrice = document.querySelector('.resumo li:nth-child(2)');
+
+        summaryProcedures.textContent = 'Procedimentos selecionados: ' + selectedProceduresText;
+        summaryTotalPrice.textContent = 'Preço total: R$ ' + totalPrice.toFixed(2);
+    }
+
+    updateSummary();
+    function calculateTotalPrice() {
+        var procedureList = document.querySelectorAll('.popular-procedures li');
+        var totalPrice = 0;
+
+        for (var i = 0; i < procedureList.length; i++) {
+            var checkbox = procedureList[i].querySelector('input[type="checkbox"]');
+            var price = procedureList[i].querySelector('p').innerText;
+
+            if (checkbox.checked) {
+                totalPrice += parseFloat(price.replace('Preço: R$ ', ''));
+            }
+        }
+
+
+    }
+    function showDescription(procId) {
+        var descriptions = {
+            description1: 'O preenchimento dérmico é um tratamento que utiliza substâncias, como ácido hialurônico, para restaurar o volume e plenitude da pele. Esse procedimento é utilizado para suavizar rugas profundas, realçar contornos faciais e aumentar os lábios. É feita através de injeções diretamente nas áreas-alvo.',
+            description2: 'Oferecemos consultas dermatológicas personalizadas, focadas nas necessidades específicas de cada paciente. Utilizamos técnicas avançadas para garantir tratamentos eficazes e sob medida para a saúde e beleza da sua pele única.',
+            description3: 'Utilizamos esta técnica consagrada para suavizar linhas de expressão e rugas, proporcionando um aspecto rejuvenescido e natural. Cada aplicação é cuidadosamente planejada para atender às expectativas e necessidades específicas do paciente, garantindo resultados satisfatórios e duradouros.',
+            description4: 'O microagulhamento é um procedimento minimamente invasivo que estimula a produção de colágeno e elastina, promovendo a renovação celular e melhorando a textura da pele. É indicado para tratar cicatrizes de acne, rugas, flacidez e manchas, proporcionando uma pele mais firme, uniforme e rejuvenescida.',
+            description5: 'O peeling químico é um tratamento estético que utiliza substâncias químicas para promover a renovação celular e melhorar a aparência da pele. É indicado para tratar manchas, rugas, acne, cicatrizes e outros problemas dermatológicos, proporcionando uma pele mais saudável, jovem e luminosa.',
+            description6: 'O laser de CO2 fracionado é um tratamento inovador que utiliza um laser de dióxido de carbono para promover a renovação da pele. É indicado para tratar rugas, cicatrizes, manchas, flacidez e outros problemas dermatológicos, proporcionando uma pele mais firme, uniforme e rejuvenescida.',
+            description7: 'O ultrassom microfocado é um tratamento não invasivo que utiliza ondas de ultrassom para estimular a produção de colágeno e elastina, promovendo o rejuvenescimento da pele. É indicado para tratar a flacidez facial e corporal, proporcionando um lifting natural e duradouro.'
+        };
+        document.getElementById(procId).innerText = descriptions[procId];
+    }
+    function hideDescription() {
+        var procedureDescriptions = document.querySelectorAll('.procedure-description');
+        for (var i = 0; i < procedureDescriptions.length; i++) {
+            procedureDescriptions[i].innerText = '';
+        }
+    }
+
+
+    function searchProcedure() {
+        var input = document.getElementById('searchInput').value;
+        console.log('Procurando por:', input);
+        // Implemente a busca e atualize a UI conforme necessário
+        var procedureList = document.querySelectorAll('.popular-procedures li');
+        for (var i = 0; i < procedureList.length; i++) {
+            var procedure = procedureList[i].innerText.toLowerCase();
+            if (procedure.includes(input.toLowerCase())) {
+                procedureList[i].style.display = 'block';
+            } else {
+                procedureList[i].style.display = 'none';
+            }
+        }
+    }
+
+    function changeMonth(direction) {
+        console.log('Mudando mês:', direction);
+        var monthYearElement = document.getElementById('monthYear');
+        var currentMonthYear = monthYearElement.innerText;
+        var currentMonth = currentMonthYear.split(' ')[0];
+        var currentYear = currentMonthYear.split(' ')[1];
+
+        var months = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'];
+        var currentMonthIndex = months.indexOf(currentMonth);
+        var newMonthIndex = currentMonthIndex + direction;
+
+        if (newMonthIndex < 0) {
+            newMonthIndex = 11;
+            currentYear--;
+        } else if (newMonthIndex > 11) {
+            newMonthIndex = 0;
+            currentYear++;
+        }
+
+        var newMonth = months[newMonthIndex];
+        monthYearElement.innerText = newMonth + ' ' + currentYear;
+    }
+    function handleCheckboxChange(procId, isChecked) {
+        console.log('Procedimento:', procId, 'Selecionado:', isChecked);
+        // Aqui você pode implementar a lógica com base no estado da caixa de seleção
+        // Por exemplo, adicionar à lista de procedimentos selecionados, atualizar uma sessão de resumo, etc.
+    }
+</script>
+
+</html>

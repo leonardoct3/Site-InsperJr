@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Site</title>
+    <!-- Estilos CSS podem ser adicionados aqui -->
+    <link rel="stylesheet" href="css/editar_pacientes.css">
+</head>
+<body>
+    <main>
+        <div class="sidebar">
+            <!--quero o logo da clinica na sidebar tambem-->
+            <a href="index.html" class="logo_header">
+                <img class="logo_header" src="img/logo.png" alt="Logo da Clínica">
+            </a>
+            <h2>
+                Menu
+            </h2>
+            <ul class="acoes">
+                <li><a href="#">Início</a></li>
+                <li><a href="#">Consultas</a></li>
+                <li><a href="#">Pacientes</a></li>
+                <li><a href="funcionario.html">Sair</a></li>
+                
+            </ul>
+        </div>
+
+        <div class="content">
+            <div class="boas_vindas">
+                <img class="usuario" src="img/usuario.png" alt="">
+                <h1>Olá,</h1>
+                <h1>Fulano de Tal!</h1>
+            </div>
+            <h2 class="titulo">Pacientes cadastrados</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Email</th>
+                        <th>CPF</th>
+                        <th>Ação</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr id="Paciente1">
+                        <td>Nome 1</td>
+                        <td>Email 1</td>
+                        <td>CPF 1</td>
+                        <td><a href="#" onclick="deletePaciente('Paciente1')">Excluir</a></td>
+                    </tr>
+                    <tr id="Paciente2">
+                        <td>Nome 2</td>
+                        <td>Email 2</td>
+                        <td>CPF 2</td>
+                        <td><a href="#" onclick="deletePaciente('Paciente2')">Excluir</a></td>
+                    </tr>
+                    <tr id="Paciente3">
+                        <td>Nome 3</td>
+                        <td>Email 3</td>
+                        <td>CPF 3</td>
+                        <td><a href="#" onclick="deletePaciente('Paciente3')">Excluir</a></td>
+                    </tr>
+                    <tr id="Paciente4">
+                        <td>Nome 4</td>
+                        <td>Email 4</td>
+                        <td>CPF 4</td>
+                        <td><a href="#" onclick="deletePaciente('Paciente4')">Excluir</a></td>
+                    </tr>
+                </tbody>
+            </table>
+            <a class="submit" href="novo_paciente.html">
+                <button type="button">Novo Paciente</button>
+            </a>
+        </div>
+        
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <ul>
+                    <li class="title">Fones</li>
+                    <li>(11) 1111-1111</li>
+                    <li>(11) 2222-2222</li>
+                    <li>(11) 3333-3333</li>
+                </ul>
+                <ul>
+                    <li class="title">WhatsApp</li>
+                    <li>(11) 99999-9999</li>
+                </ul>
+                <ul>
+                    <li class="title">Email</li>
+                    <li>atendimento@clinicadratania.com.br</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <ul>
+                    <li class="title">Endereço</li>
+                    <li>Rua Lopes Neto 56, 2° Andar, Itaim Bibi, São Paulo / SP</li>
+                    
+                </ul>
+                <ul>
+                    <li class="title">Dra. Tânia</li>
+                    <li>CRM XXXXXX</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+<script>
+    const username = localStorage.getItem('username');
+    const boasVindas = document.querySelector('.boas_vindas');
+    boasVindas.innerHTML = `
+        <img class="usuario" src="img/usuario.png" alt="">
+        <h1>Olá,</h1>
+        <h1>${username}!</h1>
+    `;
+    
+    function deletePaciente(pacienteId) {
+        // Code to delete the paciente with the given ID
+        const paciente = document.getElementById(pacienteId);
+        paciente.remove();
+
+    }
+    function addPaciente(nome, email, cpf) {
+        const tableBody = document.querySelector('tbody');
+        const newRow = document.createElement('tr');
+        newRow.id = `Paciente${tableBody.children.length + 1}`;
+        newRow.innerHTML = `
+            <td>${nome}</td>
+            <td>${email}</td>
+            <td>${cpf}</td>
+            <td><a href="#" onclick="deletePaciente('${newRow.id}')">Excluir</a></td>
+        `;
+        tableBody.appendChild(newRow);
+    }
+
+    if (localStorage.getItem('adicionar')) {
+        const paciente = JSON.parse(localStorage.getItem('paciente'));
+        addPaciente(paciente.nome, paciente.email, paciente.cpf);
+    }
+    
+</script>
+</body>
+</html>

@@ -1,0 +1,544 @@
+@import url('https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jura:wght@400;500;600&display=swap');
+
+html, body {
+    scroll-behavior: smooth;
+}
+button[type="button"] {
+    
+    color: white; /* Cor do texto */
+    border: none; /* Sem borda */
+    padding: 10px 20px; /* Espaçamento interno */
+    font-size: 16px; /* Tamanho do texto */
+    border-radius: 5px; /* Bordas arredondadas */
+    cursor: pointer; /* Cursor do mouse como ponteiro */
+    transition: background-color 0.3s, box-shadow 0.3s; /* Suaviza a transição de cor de fundo e sombra */
+    outline: none; /* Remove o contorno ao focar */
+    width: 100%; /* Largura total */
+    margin: 0;
+    margin-top: 1rem;
+    
+    
+  }
+
+  button[type="button"]:hover {
+    background-color: #FF5733; /* Cor de fundo ao passar o mouse */
+    box-shadow: 0 0 8px #FF5733; /* Sombra ao redor do botão */
+  }
+  
+  button[type="button"]:active {
+    background-color: #C4421A; /* Cor de fundo ao clicar */
+    box-shadow: 0 0 12px #FF5733 inset; /* Sombra interna para efeito de "pressionado" */
+  }
+  input::placeholder {
+    font-family: 'Jura', sans-serif;
+    font-size: 0.9rem;
+}
+input {
+    padding: 1rem;
+    margin: 1rem;
+    border-radius: 0.3rem;
+    border: 1px solid #d9d9d9;
+}
+
+body {
+    margin: 0;
+}
+.sidebar {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: fixed;
+    background-color: #d9d9d9;
+    top: 0;
+    padding: 3rem;
+    z-index: 0;
+    height: 100%;
+    width: 10%;
+}
+.a {
+    font-size: large;
+    margin: 1.5rem;
+}
+a {
+    text-decoration: none; /* Remove o sublinhado padrão */
+    transition: color 0.3s, text-decoration-color 0.3s; /* Suaviza a transição de cores e sublinhado */
+    text-decoration-line: underline; /* Adiciona sublinhado */
+    text-decoration-color: transparent; /* Torna o sublinhado transparente inicialmente */
+    text-decoration-style: solid; /* Estilo do sublinhado */
+  }
+  
+  a:hover {
+    color: #FF5733; /* Cor quando o mouse está sobre o link */
+    text-decoration-color: #FF5733; /* Torna o sublinhado visível e na mesma cor do texto ao passar o mouse */
+  }
+header {
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    height: 5rem;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    top: 0;
+    z-index: 2;
+    
+}
+
+footer {
+    z-index: 10;
+    background-color: #94B7EB;
+    margin-top: 5rem;
+    position: relative;
+}
+
+.hamburguer {
+    height: 2rem;
+    margin: 1rem;
+}
+.footer-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+ul {
+    justify-content: space-between;
+    padding: 0;
+}
+.title_sobre {
+    color: #072A86;
+    padding: 1rem;
+    padding-left: 0;
+    margin: 0;
+    margin-top: 1rem;
+    width: fit-content;
+    font-family: 'Julius Sans One', sans-serif;
+    font-weight: bold;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+   
+}
+header {
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    height: 5rem;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    top: 0;
+    
+}
+.login-area a {
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0.3rem;
+}
+.navigation {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.navigation a {
+    margin: 1rem;
+    text-decoration: none;
+    color: #000000;
+}
+.header-container {
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Opcional: adiciona uma sombra para destacar o cabeçalho */
+}
+.login-area {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo_header {
+    height: 5rem;
+}
+.menu-toggle {
+    margin: 0;
+        align-items: center;
+        display: flex;
+    }
+    a {
+        font-family: 'Julius Sans One', sans-serif;
+    }
+
+    /*---------------------------------------------------------------------------------------*/
+    
+    .sidebar {
+        display: none;
+    }	
+    a {
+        font-family: 'Julius Sans One', sans-serif;
+        font-size: 1.1rem;
+    }
+
+    .asas {
+        font-size: larger;
+        flex-direction: column;
+        display: flex;
+        align-items: center;
+        size-adjust: initial;
+    }
+
+    /* estilize o formulario da newsletter e disponha ele como achar melhor*/
+    .newsletter form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+    .newsletter input {
+        margin: 0.5rem;
+        padding: 0.5rem;
+        width: 100%;
+        border: 1px solid #072A86;
+        font-family: 'Jura', sans-serif;
+    }
+    /* queria que o form se alinhasse a esquerda, mas nao consegui */
+    .newsletter label {
+        text-align: left;
+    }
+    .form-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        
+        
+        
+    }
+
+    .newsletter button {
+        margin: 0.5rem;
+        padding: 0.5rem;
+        width: 100%;
+        background-color: #072A86;
+        color: white;
+        font-weight: bold;
+        border: none;
+        font-family: 'Julius Sans One', sans-serif;
+    }
+
+    h1 {
+        font-family: 'Julius Sans One', sans-serif;
+        font-weight: lighter;
+        margin-left: 1rem;
+        margin-top: 5rem;
+        margin-bottom: 5rem;
+    }
+    h2 {
+        font-family: 'Julius Sans One', sans-serif;
+        font-weight: lighter;
+    }
+
+    .sobre_tn {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin: 10rem;
+        margin-top: 5rem;
+        
+    }
+    .sobre_tn img {
+        max-height: fit-content;
+        width: auto;
+    }
+    
+
+    .section_tn {
+        margin-left: 3rem;
+    }
+    p {
+        font-family: 'Jura', sans-serif;
+        font-size: large;
+        margin-bottom: 1.7rem;
+        font-size: 1.3rem;
+        text-align: justify;
+    }
+
+    .qAzulEscuro {
+        position: relative;
+        right: 38%;
+        transform: translateY(-30%);
+        
+        min-width: 20%;;
+        height: 6rem; /* Altura do quadrado */
+        background-color: #072A86; /* Cor azul claro */
+        z-index: -1; /* Garante que fique atrás da imagem */
+        
+    }
+    .servicos {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-top: 5rem;
+        background-color: #f5f5f5;
+        padding: 3rem;
+    }
+
+    span {
+        flex-direction: row;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        size-adjust: initial;
+        flex-wrap: wrap;
+    }
+
+    span img {
+        margin: 1.5rem;
+        
+    }
+    .servicos img {
+        width: 15rem;
+        height: 25rem;
+    }
+
+
+
+.newsletter {
+    margin-top: 5rem;
+    background-color: #d9d9d9;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-right: 20%;
+    margin-left: 20%;
+    padding-left: 5rem;
+    padding-right: 5rem;
+    background-image: '/img/image.png';
+}
+
+.line {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+@media (max-width: 1200px) {
+    .sobre_tn {
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+        margin: 5rem;
+    }
+    
+}
+
+@media (max-width: 920px) {
+    h1, h2 {
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+    }
+
+    .sobre_tn, .servicos, .newsletter {
+        flex-direction: column;
+        align-items: center;
+        padding: 2rem;
+    }
+
+    .section_tn, .qAzulEscuro {
+        margin-left: 0;
+        width: 100%;
+        transform: translateY(0);
+        right: 0;
+    }
+
+    .sobre_tn img, .servicos img, .newsletter img {
+        size-adjust: x;
+    }
+
+    .footer-section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .newsletter {
+        padding: 1rem;
+    }
+    .asas {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        
+    }
+    
+}
+@media (max-width: 740px) {
+    .navigation {
+        display: none;
+    }
+    .servicos span{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
+    .sobre_tn img {
+        max-height: 100%;
+        width: 100%;
+    }
+    
+    .servicos img {
+        max-width: 100%;
+        height: 100%;
+        margin: 0.5rem;
+    }
+    .newsletter {
+        margin-right: 3rem;
+        margin-left: 3rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    .newsletter img {
+        margin: 0;
+    }
+
+    .footer-section {
+        flex: auto;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+    .footer-section ul {
+        padding: 0;
+        
+    }
+    /* queria que o footer ficasse mais responsivo, mas nao consegui, entao deixei assim */
+    .footer-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+}
+/* algo esta impedindo ele de mudar pra column conserte*/
+@media (max-width: 700px) {
+    .footer-section {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+
+}
+    
+
+    .footer-section {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+    }
+
+    .newsletter {
+        padding: 1rem;
+    }
+
+
+
+
+
+
+
+
+
+/* -------------------------------------------------------------------------------------*/
+
+
+
+
+
+
+
+
+
+footer {
+
+    background-color: #94B7EB;
+    margin-top: 5rem;
+}
+
+
+
+li {
+    font-family: 'Jura', sans-serif;
+    text-decoration: none;
+    color: #072A86;
+}
+.title {
+    font-family: 'Julius Sans One', sans-serif;
+    font-weight: bold;
+}
+ul {
+    list-style: none;
+}
+.grande {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+}
+
+a {
+    text-decoration: none; /* Remove o sublinhado padrão */
+    transition: color 0.3s, text-decoration-color 0.3s; /* Suaviza a transição de cores e sublinhado */
+    text-decoration-line: underline; /* Adiciona sublinhado */
+    text-decoration-color: transparent; /* Torna o sublinhado transparente inicialmente */
+    text-decoration-style: solid; /* Estilo do sublinhado */
+  }
+  
+a:hover {
+color: #FF5733; /* Cor quando o mouse está sobre o link */
+text-decoration-color: #FF5733; /* Torna o sublinhado visível e na mesma cor do texto ao passar o mouse */
+}
+
+
+.servico {
+    position: relative; /* Add this line */
+}
+
+.servico-description {
+    display: none; /* Add this line */
+    position: absolute; /* Add this line */
+    bottom: 5px; /* Add this line */
+    left: 0; /* Add this line */
+    width: 13rem; /* Add this line */
+    height: 23rem;
+    background-color: rgba(0, 0, 0, 0.8); /* Add this line */
+    color: #fff; /* Add this line */
+    padding: 1rem; /* Add this line */
+    transition: opacity 0.3s; /* Add this line */
+    margin: 1.5rem;
+}
+
+.servico:hover .servico-description {
+    display: block; /* Add this line */
+}
+
+.n {
+    margin: 3rem;
+    margin-bottom: 0;
+    text-justify: newspaper;
+}

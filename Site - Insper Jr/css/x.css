@@ -1,0 +1,19 @@
+.servico {
+    position: relative; /* Add this line */
+}
+
+.servico-description {
+    display: none; /* Add this line */
+    position: absolute; /* Add this line */
+    bottom: 0; /* Add this line */
+    left: 0; /* Add this line */
+    width: 100%; /* Add this line */
+    background-color: rgba(0, 0, 0, 0.8); /* Add this line */
+    color: #fff; /* Add this line */
+    padding: 10px; /* Add this line */
+    transition: opacity 0.3s; /* Add this line */
+}
+
+.servico:hover .servico-description {
+    display: block; /* Add this line */
+}

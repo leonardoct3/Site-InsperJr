@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Site</title>
+    <!-- Estilos CSS podem ser adicionados aqui -->
+    <link rel="stylesheet" href="css/menu_funcionario.css">
+</head>
+<body>
+    <main>
+        <div class="sidebar">
+            <!--quero o logo da clinica na sidebar tambem-->
+            <a href="index.html" class="logo_header">
+                <img class="logo_header" src="img/logo.png" alt="Logo da Clínica">
+            </a>
+            <h2>
+                Menu
+            </h2>
+            <ul class="acoes">
+                <li><a href="menu_funcionario.html">Início</a></li>
+                <li><a href="editar_procedimento.html">Consultas</a></li>
+                <li><a href="editar_pacientes.html">Pacientes</a></li>
+                <li><a href="funcionario.html">Sair</a></li>
+                
+            </ul>
+        </div>
+
+        <div class="content">
+            <div class="boas_vindas">
+                <img class="usuario" src="img/usuario.png" alt="">
+                <h1>Olá,</h1>
+                <h1>Fulano de Tal!</h1>
+            </div>
+            <h2 class="titulo">Seus procedimentos á acontecer</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Procedimento</th>
+                        <th>Data</th>
+                        <th>Horário</th>
+                        <th>Ação</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr id="Procedimento1">
+                        <td>Procedimento1</td>
+                        <td>2024-05-13</td>
+                        <td>9:00</td>
+                        <td><a href="editar_procedimento.html" onclick="salvarProcedimento('Procedimento1')">Editar</a></td>
+                    </tr>
+                    <tr id="Procedimento2">
+                        <td>Procedimento2</td>
+                        <td>2024-05-13</td>
+                        <td>11:00</td>
+                        <td><a href="editar_procedimento.html" onclick="salvarProcedimento('Procedimento2')">Editar</a></td>
+                    </tr>
+                    <tr id="Procedimento3">
+                        <td>Procedimento3</td>
+                        <td>2024-05-13</td>
+                        <td>14:30</td>
+                        <td><a href="editar_procedimento.html" onclick="salvarProcedimento('Procedimento3')">Editar</a></td>
+                    </tr>
+                    <tr id="Procedimento4">
+                        <td>Procedimento4</td>
+                        <td>2024-05-13</td>
+                        <td>17:00</td>
+                        <td><a href="editar_procedimento.html" onclick="salvarProcedimento('Procedimento4')">Editar</a></td>
+                </tbody>
+            </table>
+
+        </div>
+        
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <ul>
+                    <li class="title">Fones</li>
+                    <li>(11) 1111-1111</li>
+                    <li>(11) 2222-2222</li>
+                    <li>(11) 3333-3333</li>
+                </ul>
+                <ul>
+                    <li class="title">WhatsApp</li>
+                    <li>(11) 99999-9999</li>
+                </ul>
+                <ul>
+                    <li class="title">Email</li>
+                    <li>atendimento@clinicadratania.com.br</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <ul>
+                    <li class="title">Endereço</li>
+                    <li>Rua Lopes Neto 56, 2° Andar, Itaim Bibi, São Paulo / SP</li>
+                    
+                </ul>
+                <ul>
+                    <li class="title">Dra. Tânia</li>
+                    <li>CRM XXXXXX</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+<script>
+    const username = localStorage.getItem('username');
+    const boasVindas = document.querySelector('.boas_vindas');
+    boasVindas.innerHTML = `
+        <img class="usuario" src="img/usuario.png" alt="">
+        <h1>Olá,</h1>
+        <h1>${username}!</h1>
+    `; 
+    
+    function salvarProcedimento(procedimento) {
+        localStorage.setItem('procedimento', procedimento);
+    }
+    function cancelarProcedimento() {
+        const cancelado = localStorage.getItem('cancelado');
+        if (cancelado) {
+            const procedimento = localStorage.getItem('procedimento');
+            const tr = document.getElementById(`${procedimento}`);
+            tr.style.color = "red";
+            console.log('cancelado');
+            localStorage.removeItem('cancelado');
+        }
+        
+    };
+    if (localStorage.getItem('cancelado') === 'true') {
+        cancelarProcedimento();
+        
+    }
+    function alterarProcedimento() {
+        // Get the values from the form
+        const procedimento = localStorage.getItem('procedimento');
+        const data = localStorage.getItem('data');
+        const hora = localStorage.getItem('hora');
+        const motivo = localStorage.getItem('motivo');
+
+        // Update the values in the table
+        const tr = document.getElementById(`${procedimento}`);
+        
+        tr.querySelector('td:nth-child(2)').textContent = data;
+        tr.querySelector('td:nth-child(3)').textContent = hora;
+        
+
+        
+    }
+    if (localStorage.getItem('alterado') === 'true') {
+        alterarProcedimento();
+        localStorage.removeItem('alterado');
+    }
+    
+</script>
+</body>
+</html>

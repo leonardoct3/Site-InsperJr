@@ -1,0 +1,366 @@
+@import url('https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jura:wght@400;500;600&display=swap');
+
+.sidebar {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: fixed;
+    background-color: #d9d9d9;
+    top: 0;
+    padding: 3rem;
+    z-index: 0;
+    height: 100%;
+    width: 10%;
+}
+.a {
+    font-size: large;
+    margin: 1.5rem;
+}
+
+
+header {
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    height: 5rem;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    top: 0;
+    z-index: 2;
+    
+}
+
+footer {
+    z-index: 10;
+    background-color: #94B7EB;
+    margin-top: 5rem;
+    position: relative;
+}
+
+.hamburguer {
+    height: 2rem;
+    margin: 1rem;
+}
+body {
+    margin: 0;
+}
+main {
+    display: flex;
+    flex-wrap: wrap;
+}
+.footer-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+ul {
+    justify-content: space-between;
+    padding: 0;
+}
+.title_sobre {
+    background-color: #072A86;
+    color: white;
+    padding: 1rem;
+    margin: 0;
+    margin-top: 1rem;
+}
+header {
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    height: 5rem;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    top: 0;
+    
+}
+.login-area a {
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0.3rem;
+}
+.navigation {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.navigation a {
+    margin: 1rem;
+    text-decoration: none;
+    color: #000000;
+}
+.header-container {
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Opcional: adiciona uma sombra para destacar o cabeçalho */
+}
+.login-area {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo_header {
+    height: 5rem;
+}
+.menu-toggle {
+    margin: 0;
+    align-items: center;
+    display: flex;
+}
+
+
+a {
+    font-family: 'Julius Sans One', sans-serif;
+    font-size: 1.1rem;
+}
+
+footer {
+
+    background-color: #94B7EB;
+    margin-top: 5rem;
+}
+
+
+
+li {
+    font-family: 'Jura', sans-serif;
+    text-decoration: none;
+    color: #072A86;
+}
+.title {
+    font-family: 'Julius Sans One', sans-serif;
+    font-weight: bold;
+}
+ul {
+    list-style: none;
+}
+.grande {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+}
+
+
+
+/*---------------------------------------------------------------------------------------*/
+
+.sidebar {
+    display: none;
+}
+
+
+.login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 1rem;
+    margin-top: 1rem;
+
+    
+}
+.cadastro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 1rem;
+    margin: 1rem;
+
+    
+}
+
+.entradas {
+    display: flex;
+    flex-direction: column;
+    
+    
+    padding: 1rem;
+    
+    width: 20rem;
+    height: 20rem;
+}
+/* queria mudar a fonte do placeholder dos inputs pra `JURA` */
+input::placeholder {
+    font-family: 'Jura', sans-serif;
+    font-size: 0.8rem;
+}
+h1 {
+    font-family: 'Julius Sans One', sans-serif;
+    font-weight: lighter;
+    margin-left: 1rem;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+}
+h2 {
+    font-family: 'Julius Sans One', sans-serif;
+    font-weight: lighter;
+}
+input {
+    padding: 0.5rem;
+    margin: 0.5rem;
+    border-radius: 0.2rem;
+    border: 1px solid #d9d9d9;
+}
+
+button {
+    padding: 0.5rem;
+    margin: 0.5rem;
+    border-radius: 0.2rem;
+    border: 1px solid #d9d9d9;
+    background-color: #072A86;
+    color: white;
+    font-family: 'Julius Sans One', sans-serif;
+    font-weight: bold;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    align-items: start;    
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+/* Preciso que a background image comece no bottom do main */
+
+body {
+    margin: 0;
+    min-width: none;
+    min-height: none;
+    flex-wrap: wrap;
+}
+
+body {
+    background-image: url('/img/login-cadastro.png');
+    background-position: bottom right;
+    background-repeat: no-repeat;
+    background-position: cover;
+}
+.esqueceu {
+    font-family: 'Julius Sans One', sans-serif;
+    font-size: 0.8rem;
+    color: #072A86;
+    align-self: center;
+    
+}
+
+a {
+    text-decoration: none; /* Remove o sublinhado padrão */
+    transition: color 0.3s, text-decoration-color 0.3s; /* Suaviza a transição de cores e sublinhado */
+    text-decoration-line: underline; /* Adiciona sublinhado */
+    text-decoration-color: transparent; /* Torna o sublinhado transparente inicialmente */
+    text-decoration-style: solid; /* Estilo do sublinhado */
+  }
+  
+a:hover {
+color: #FF5733; /* Cor quando o mouse está sobre o link */
+text-decoration-color: #FF5733; /* Torna o sublinhado visível e na mesma cor do texto ao passar o mouse */
+}
+
+
+button[type="button"] {
+    
+    color: white; /* Cor do texto */
+    border: none; /* Sem borda */
+    padding: 10px 20px; /* Espaçamento interno */
+    font-size: 16px; /* Tamanho do texto */
+    border-radius: 5px; /* Bordas arredondadas */
+    cursor: pointer; /* Cursor do mouse como ponteiro */
+    transition: background-color 0.3s, box-shadow 0.3s; /* Suaviza a transição de cor de fundo e sombra */
+    outline: none; /* Remove o contorno ao focar */
+    width: 100%; /* Largura total */
+    margin: 0;
+    margin-top: 1rem;
+    
+    
+  }
+
+  button[type="button"]:hover {
+    background-color: #FF5733; /* Cor de fundo ao passar o mouse */
+    box-shadow: 0 0 8px #FF5733; /* Sombra ao redor do botão */
+  }
+  
+  button[type="button"]:active {
+    background-color: #C4421A; /* Cor de fundo ao clicar */
+    box-shadow: 0 0 12px #FF5733 inset; /* Sombra interna para efeito de "pressionado" */
+  }
+
+.entradas {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    height: fit-content;
+    
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    margin: 1rem;
+}
+
+@media (max-width: 910px) {
+    .cadastro {
+        margin: 0;
+    }
+    
+}
+
+@media (max-width: 700px) {
+    .cadastro {
+        margin: 0;
+    }
+    .navigation {
+        display: none;
+    }
+    main {
+        justify-content: center;
+        margin: 0;
+    }
+    
+}
+
+@media (max-width: 700px) {
+    .cadastro {
+        margin: 0;
+    }
+    .navigation {
+        display: none;
+    }
+    main {
+        justify-content: center;
+        margin: 0;
+    }
+    
+}
+
+@media (max-width: 700px) {
+    .footer-container {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: center;
+        margin-left: 1rem;
+    }
+}
+
+@media (max-width: 430px) {
+    /* diminua os boxes de cadastro e login de qualquer maneira */
+    .entradas {
+        width: auto;
+    }
+    .logo_header {
+        display: none;
+    }
+}
+

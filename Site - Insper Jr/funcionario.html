@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Site</title>
+    <!-- Estilos CSS podem ser adicionados aqui -->
+    <link rel="stylesheet" href="css/funcionario.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="menu-toggle">
+                <a class="smooth" onclick="sidebar()" href="#">
+                    <img class="hamburguer" src="img/hamburguer.png" alt="Menu Hamburguer">
+                </a>
+                <a href="index.html" class="logo_header">
+                    <img class="logo_header" src="img/logo.png" alt="Logo da Clínica">
+                </a>
+            </div>
+            <nav class="navigation">
+                <a href="sobreNos.html">Sobre nós</a>
+                <a href="#footer">Contato</a>
+            </nav>
+            <div class="header-cta">
+                <div class="login-area">
+                    <a href="paciente.html" class="cta-login-cliente">Paciente</a>
+                    <h3 class="grande">|</h3>
+                    <a href="funcionario.html" class="cta-login-funcionario">Funcionário</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="sidebar">
+            <a href="sobreNos.html" class="a">Sobre nós</a>
+            <a href="#footer" onclick="sidebar()" class="a">Contato</a>
+            <a href="paciente.html" class="cta-login-cliente a">Paciente</a>
+            <a href="funcionario.html" class="cta-login-funcionario a">Funcionário</a>
+        </div>
+
+        <!-- Conteúdo principal da página -->
+        <section class="login">
+            <h2>Login</h2>
+            <!-- Formulário de login -->
+            <form class="entradas">
+                <!-- Campos de entrada -->
+                <input type="text" id="username" placeholder="Nome de usuário">
+                <input type="password" id="password" placeholder="Senha">
+                <!--Coloque um a de esqueceu a senha-->
+                <a class="esqueceu" href="#">Esqueceu a senha?</a>
+                <!-- Botão de login -->
+                <a class="submit" href="#">
+                    <button type="button" onclick="login()">Entrar</button>
+                </a>
+            </form>
+        </section>
+
+
+    </main>
+
+    <footer id="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <ul>
+                    <li class="title">Fones</li>
+                    <li>(11) 1111-1111</li>
+                    <li>(11) 2222-2222</li>
+                    <li>(11) 3333-3333</li>
+                </ul>
+                <ul>
+                    <li class="title">WhatsApp</li>
+                    <li>(11) 99999-9999</li>
+                </ul>
+                <ul>
+                    <li class="title">Email</li>
+                    <li>atendimento@clinicadratania.com.br</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <ul>
+                    <li class="title">Endereço</li>
+                    <li>Rua Lopes Neto 56, 2° Andar, Itaim Bibi, São Paulo / SP</li>
+                    
+                </ul>
+                <ul>
+                    <li class="title">Dra. Tânia</li>
+                    <li>CRM XXXXXX</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <script>
+        function sidebar() {
+            var sidebar = document.querySelector('.sidebar');
+            
+            var hamburguerImg = document.querySelector('.hamburguer');
+            
+            if (sidebar.style.display === 'flex') {
+                sidebar.style.display = 'none';
+                hamburguerImg.src = 'img/hamburguer.png';
+                
+            } else {
+                sidebar.style.display = 'flex';
+                hamburguerImg.src = "img/x.png";
+                
+            }
+            
+        }
+        function login() {
+            var username = document.getElementById("username").value;
+            localStorage.setItem('username', username);
+            var password = document.getElementById("password").value;
+
+            // Verificar se o login é válido
+            if (username === "Tania" && password === "1234") {
+                document.querySelector(".submit").href = "menu_funcionario.html";
+            } else if (username === "funcionario2" && password === "senha2") {
+                document.querySelector(".submit").href = "menu_funcionario.html";
+            } else if (username === "funcionario3" && password === "senha3") {
+                document.querySelector(".submit").href = "menu_funcionario.html";
+            } else {
+                alert("Login inválido. Por favor, verifique suas credenciais.");
+            }
+            
+            
+        }
+    </script>
+</body>
+</html>

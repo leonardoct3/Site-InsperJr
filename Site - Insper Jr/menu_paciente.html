@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Site</title>
+    <!-- Estilos CSS podem ser adicionados aqui -->
+    <link rel="stylesheet" href="css/menu_paciente.css">
+</head>
+<body>
+    <main>
+        <div class="sidebar">
+            <!--quero o logo da clinica na sidebar tambem-->
+            <a href="index.html" class="logo_header">
+                <img class="logo_header" src="img/logo.png" alt="Logo da Clínica">
+            </a>
+            <h2>
+                Menu
+            </h2>
+            <ul class="acoes">
+                <li><a href="menu_paciente.html">Início</a></li>
+                <li><a href="historico.html">Consultas</a></li>
+                <li><a href="paciente.html">Sair</a></li>
+                
+            </ul>
+        </div>
+
+        <div class="content">
+            <div class="boas_vindas">
+                <img class="usuario" src="img/usuario.png" alt="">
+                <h1>Olá,</h1>
+                <h1>Fulano de Tal!</h1>
+            </div>
+            <div class="boxes">
+                <div class="box procedimentos">
+                    <h2>Procedimentos</h2>
+                    <div class="x">
+                        <div class="y">
+                            <p>Acesse seu histórico de procedimentos e consultas realizadas na clínica.</p>
+                            <a href="historico.html">Ver minhas consultas</a>
+                        </div>
+                        <img src="img/flor.png" alt="">
+                    </div>
+                    
+                    <!--Cada box tem que ter uma imagem com a url que vou colocar-->
+                    
+                </div>
+                <div class="box consulta">
+                    <h2>Agende uma nova consulta</h2>
+                    <div class="x">
+                        <div class="y">
+                            <p>Atendimento médico especializado e personalizado esperando por você.</p>
+                            <a href="agendamento1.html">Agendar agora</a>
+                        </div>
+                        <img src="img/flor.png" alt="">
+                    </div>
+                </div>
+
+                <div class="box newsletter">
+                    <h2>Assine nossa newsletter</h2>
+                    <div class="x">
+                        <div class="y">
+                            <p>Receba dicas de cuidado com a pele e novidades exclusivas Clínica TN. Inscreva-se agora!</p>
+                            <a href="sobreNos.html#newsletter">Assinar</a>
+                        </div>
+                        <img src="img/flor.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="linha"></div>
+            <div class="propaganda">
+                <img src="img/laser.png" alt="">
+                <div class="conteudo">
+                    <h1>Laser de CO2</h1>
+                    <p>Venha descobrir os benefícios do tratamento a laser CO2 na Clínica TN. Agende sua consulta e transforme sua pele conosco. Não perca essa chance!</p>
+                    <a href="agendamento1.html">Agendar procedimento</a>
+                </div>
+            </div>
+        </div>
+        
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <ul>
+                    <li class="title">Fones</li>
+                    <li>(11) 1111-1111</li>
+                    <li>(11) 2222-2222</li>
+                    <li>(11) 3333-3333</li>
+                </ul>
+                <ul>
+                    <li class="title">WhatsApp</li>
+                    <li>(11) 99999-9999</li>
+                </ul>
+                <ul>
+                    <li class="title">Email</li>
+                    <li>atendimento@clinicadratania.com.br</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <ul>
+                    <li class="title">Endereço</li>
+                    <li>Rua Lopes Neto 56, 2° Andar, Itaim Bibi, São Paulo / SP</li>
+                    
+                </ul>
+                <ul>
+                    <li class="title">Dra. Tânia</li>
+                    <li>CRM XXXXXX</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <script>
+        const username = localStorage.getItem('username');
+        const boasVindas = document.querySelector('.boas_vindas');
+        boasVindas.innerHTML = `
+            <img class="usuario" src="img/usuario.png" alt="">
+            <h1>Olá,</h1>
+            <h1>${username}!</h1>
+        `;
+    </script>
+</body>
+</html>

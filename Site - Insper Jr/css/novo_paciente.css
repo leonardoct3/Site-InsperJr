@@ -1,0 +1,567 @@
+@import url('https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jura:wght@400;500;600&display=swap');
+
+
+body {
+    margin: 0;
+}
+.footer-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+ul {
+    justify-content: space-between;
+    padding: 0;
+}
+footer {
+    z-index: 3;
+    /* queria que ele ficasse acima da sidebar*/
+    position: relative;
+}
+
+.usuario {
+    height: 10rem;
+}
+
+.logo_header {
+    height: 10rem;
+}
+.menu-toggle {
+    margin: 0;
+    align-items: center;
+    display: flex;
+}
+
+
+a {
+    font-family: 'Julius Sans One', sans-serif;
+    font-size: 1.1rem;
+}
+
+footer {
+
+    background-color: #94B7EB;
+    margin-top: 5rem;
+}
+
+
+
+li {
+    font-family: 'Jura', sans-serif;
+    text-decoration: none;
+    color: #072A86;
+}
+.title {
+    font-family: 'Julius Sans One', sans-serif;
+    font-weight: bold;
+}
+ul {
+    list-style: none;
+}
+.grande {
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+}
+h1 {
+    font-family: 'Julius Sans One', sans-serif;
+    font-weight: lighter;
+    margin-left: 1rem;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+}
+h2 {
+    font-family: 'Julius Sans One', sans-serif;
+    font-weight: lighter;
+    
+}
+.titulo {
+    margin-left: 2rem;
+}
+
+
+
+main {
+    display: flex;
+    flex-direction: row;
+    /* as coisas no main estao se sobrepondo e nao ficando uma do lado da outra */
+    margin-left: 15rem;
+
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    width: 15rem;
+    height: 100vh;
+    /*queria que sua altura fosse at[e o footer, porem nao conseguia fazer isso */
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding-top: 2rem;
+    /* quero uma shadow no lado direito dessa sidebar */
+    box-shadow: 5px 0px 5px 0px rgba(0,0,0,0.2);
+}
+
+.boxes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 2rem;
+
+}
+
+.box {
+    /* quero fixar essa largura e altura */
+
+    width: 25rem;
+    height: 20rem;
+
+    height: fit-content;
+    margin: 1rem;
+    padding: 1rem;
+    padding-bottom: 0;
+    margin-bottom: 1rem;
+    border-radius: 1rem;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+.y {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+    margin-bottom: 1rem;
+    margin-right: 2rem;
+    text-align: justify;
+
+}
+.procedimentos {
+    background-color: #072A86;
+    color: white;
+}
+.procedimentos a {
+    color: white;
+    /*quero um quadrado com border radius em volta desse a */
+    border-radius: 5px;
+    padding: 0.5rem;
+    margin: 0.5rem;
+    border: 1px solid white;
+    
+}
+
+.consulta {
+    background-color: #94B7EB;
+    color: black;
+}
+.consulta a {
+    color: black;
+    /*quero um quadrado com border radius em volta desse a */
+    border-radius: 5px;
+    padding: 0.5rem;
+    margin: 0.5rem;
+    border: 1px solid black;
+}
+
+.newsletter {
+    background-color: #5e5c5c;
+    color: black;
+}
+.newsletter a {
+    color: black;
+    /*quero um quadrado com border radius em volta desse a */
+    border-radius: 5px;
+    padding: 0.5rem;
+    margin: 0.5rem;
+    border: 1px solid black;
+}
+
+.linha {
+    width: 90%;
+    height: 1px;
+    background-color: black;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    align-self: center;
+    margin-left: 5rem;
+}
+
+.propaganda {
+    width: 100%;
+    margin-bottom: 2rem;
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+}
+
+.conteudo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+    margin: 5rem;
+    max-width: 40%;
+
+}
+.conteudo h1 {
+    font-size: xxx-large;
+    color: #5e5c5c;
+    margin: 0;
+}
+.conteudo p {
+    font-size: 1.5em;
+    margin-bottom: 1.7rem;
+    text-align: justify;
+}
+a {
+    text-decoration: none; /* Remove o sublinhado padrão */
+    transition: color 0.3s, text-decoration-color 0.3s; /* Suaviza a transição de cores e sublinhado */
+    transition: color 0.3s, border-color 0.3s; /* Suaviza a transição de cores e sublinhado */
+    text-decoration-line: underline; /* Adiciona sublinhado */
+    text-decoration-color: transparent; /* Torna o sublinhado transparente inicialmente */
+    text-decoration-style: solid; /* Estilo do sublinhado */
+  }
+  
+a:hover {
+    color: #FF5733; /* Cor quando o mouse está sobre o link */
+    text-decoration-color: none; /* Torna o sublinhado visível e na mesma cor do texto ao passar o mouse */
+    border-color: #FF5733;
+}
+.conteudo a {
+    background-color: #072A86;
+    color: white; /* Cor do texto */
+    border: none; /* Sem borda */
+    padding: 1rem; /* Espaçamento interno */
+    font-size: 1.5rem; /* Tamanho do texto */
+    border-radius: 0.3rem; /* Bordas arredondadas */
+    cursor: pointer; /* Cursor do mouse como ponteiro */
+    transition: background-color 0.3s, box-shadow 0.3s; /* Suaviza a transição de cor de fundo e sombra */
+    outline: none; /* Remove o contorno ao focar */
+  }
+
+  .conteudo a:hover {
+    background-color: #FF5733; /* Cor de fundo ao passar o mouse */
+    box-shadow: 0 0 8px #FF5733; /* Sombra ao redor do botão */
+    text-decoration: none;
+  }
+  
+  .conteudo a:active {
+    background-color: #C4421A; /* Cor de fundo ao clicar */
+    box-shadow: 0 0 12px #FF5733 inset; /* Sombra interna para efeito de "pressionado" */
+  }
+
+.boas_vindas {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.boas_vindas img {
+    width: auto;
+    margin-right: 1rem;
+}
+
+.acoes {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    
+}
+
+li {
+    list-style: none;
+    /* espacamento entre os topicos */
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+
+}
+
+p {
+    font-family: 'Jura', 'sans-serif';
+    font-size: 1.3rem;
+    margin-bottom: 1.7rem;
+    text-align: justify;
+}
+
+.x {
+    display: flex;
+    flex-direction: row;
+}
+
+@media (max-width: 1716px) {
+    .boxes {
+        justify-content: space-around;
+    }
+    .conteudo {
+        margin: 1rem;
+        align-items: center;
+    }
+    .propaganda img {
+        width: 40rem;
+    }
+}
+
+@media (max-width: 1372px) {
+
+    .propaganda img {
+        width: 30rem;
+    }
+
+}
+
+@media (max-width: 1092px) {
+
+    .propaganda {
+        flex-direction: column;
+        align-items: center;
+
+    }
+    .linha {
+        width: 80%;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    td {
+        padding: 0;
+    }
+}
+
+
+
+
+
+@media (max-width: 700px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+
+}
+    
+
+    .footer-section {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+    }
+
+footer li {
+    margin: 0;
+}	
+
+
+table {
+    border-collapse: collapse;
+    margin: 2rem;
+    font-family: 'Jura', sans-serif;
+    font-size: 1.2rem; /* Increase font size */
+}
+
+th, td {
+    padding: 1rem; /* Increase padding */
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+    font-family: 'Julius Sans One', sans-serif;
+    font-size: 1.3rem; /* Increase font size */
+}
+
+tr:hover {
+    background-color: #f5f5f5;
+}
+
+table caption {
+    font-weight: bold;
+    margin-bottom: 1rem;
+    font-family: 'Julius Sans One', sans-serif;
+    font-size: 1.4rem; /* Increase font size */
+}
+
+table thead th {
+    font-family: 'Julius Sans One', sans-serif;
+    font-size: 1.3rem; /* Increase font size */
+}
+
+
+.usuario {
+    width: 10rem;
+    height: auto;
+}
+.content {
+    margin-bottom: 10rem;
+}
+
+@media (max-width: 800px) {
+    th, td {
+        padding: 0.5rem; /* Increase padding */
+    }
+}
+
+
+@media (max-width: 610px) {
+
+
+
+
+
+    .logo_header {
+        height: 5rem;
+    }
+    .sidebar {
+        flex-direction: row;
+        width: 100%;
+        height: auto;
+        top: 0;
+        padding: 0;
+        justify-content: space-around;
+        z-index: 3;
+        position:absolute;
+    }
+    .sidebar a {
+        margin: 0.5rem;
+    }
+    .sidebar h2 {
+        display: none;
+    }
+    .acoes {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    main {
+        margin: 0;
+        
+        
+    }
+    .boas_vindas {
+        margin-top: 4rem;
+        align-items: center;
+    }
+    table {
+        margin: 0;
+    }
+    
+}
+
+@media (max-width: 500px) {
+
+    h2 {
+        margin: 0;
+        margin-bottom: 1rem;
+        font-size: 1rem;
+    }
+    .titulo {
+        margin: 0;
+        margin-bottom: 1rem;
+    }
+    a {
+        font-size: 0.7rem;
+    }
+}
+
+
+button {
+    padding: 0.5rem;
+    margin: 0.5rem;
+    border-radius: 0.2rem;
+    border: 1px solid #d9d9d9;
+    background-color: #072A86;
+    color: white;
+    font-family: 'Julius Sans One', sans-serif;
+    font-weight: bold;
+}
+
+button[type="button"] {
+    
+    color: white; /* Cor do texto */
+    border: none; /* Sem borda */
+    padding: 1rem 1.1rem; /* Espaçamento interno */
+    font-size: 1.2rem; /* Tamanho do texto */
+    border-radius: 5px; /* Bordas arredondadas */
+    cursor: pointer; /* Cursor do mouse como ponteiro */
+    transition: background-color 0.3s, box-shadow 0.3s; /* Suaviza a transição de cor de fundo e sombra */
+    outline: none; /* Remove o contorno ao focar */
+    
+    margin: 2rem;
+    margin-top: 1rem;
+    
+    
+  }
+
+  button[type="button"]:hover {
+    background-color: #FF5733; /* Cor de fundo ao passar o mouse */
+    box-shadow: 0 0 8px #FF5733; /* Sombra ao redor do botão */
+  }
+  
+  button[type="button"]:active {
+    background-color: #C4421A; /* Cor de fundo ao clicar */
+    box-shadow: 0 0 12px #FF5733 inset; /* Sombra interna para efeito de "pressionado" */
+  }
+
+  
+.cadastro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 1rem;
+    margin: 1rem;
+
+    
+}
+
+.entradas {
+    display: flex;
+    flex-direction: column;
+    
+    
+    padding: 1rem;
+    
+    width: 20rem;
+    height: 20rem;
+}
+/* queria mudar a fonte do placeholder dos inputs pra `JURA` */
+input::placeholder {
+    font-family: 'Jura', sans-serif;
+    font-size: 0.8rem;
+}
+h1 {
+    font-family: 'Julius Sans One', sans-serif;
+    font-weight: lighter;
+    margin-left: 1rem;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+}
+h2 {
+    font-family: 'Julius Sans One', sans-serif;
+    font-weight: lighter;
+}
+input {
+    padding: 0.5rem;
+    margin: 0.5rem;
+    border-radius: 0.2rem;
+    border: 1px solid #d9d9d9;
+}
+button {
+    padding: 0.5rem;
+    margin: 0.5rem;
+    border-radius: 0.2rem;
+    border: 1px solid #d9d9d9;
+    background-color: #072A86;
+    color: white;
+    font-family: 'Julius Sans One', sans-serif;
+    font-weight: bold;
+}

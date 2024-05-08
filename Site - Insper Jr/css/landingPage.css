@@ -1,0 +1,636 @@
+@import url('https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jura:wght@400;500;600&display=swap');
+
+html, body {
+    scroll-behavior: smooth;
+}
+.sidebar {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: fixed;
+    background-color: #d9d9d9;
+    top: 0;
+    padding: 3rem;
+    z-index: 0;
+    height: 100%;
+    width: 10%;
+}
+.smooth {
+    transition: 0.3s;
+    
+}
+body {
+    margin: 0;
+}
+.a {
+    font-size: large;
+    margin: 1.5rem;
+}
+a {
+    text-decoration: none; /* Remove o sublinhado padrão */
+    transition: color 0.3s, text-decoration-color 0.3s; /* Suaviza a transição de cores e sublinhado */
+    text-decoration-line: underline; /* Adiciona sublinhado */
+    text-decoration-color: transparent; /* Torna o sublinhado transparente inicialmente */
+    text-decoration-style: solid; /* Estilo do sublinhado */
+  }
+  
+  a:hover {
+    color: #FF5733; /* Cor quando o mouse está sobre o link */
+    text-decoration-color: #FF5733; /* Torna o sublinhado visível e na mesma cor do texto ao passar o mouse */
+  }
+  
+header {
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    height: 5rem;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    top: 0;
+    z-index: 2;
+    
+}
+.login-area a {
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0.3rem;
+}
+.navigation {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.navigation a {
+    margin: 1rem;
+    text-decoration: none;
+    color: #000000;
+}
+.header-container {
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Opcional: adiciona uma sombra para destacar o cabeçalho */
+}
+.login-area {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.hamburguer {
+    height: 2rem;
+    margin: 1rem;
+}
+.logo_header {
+    height: 5rem;
+}
+.menu-toggle {
+    margin: 0;
+    align-items: center;
+    display: flex;
+    z-index: 15;
+}
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: auto; /* Isso depende da altura que você deseja para a imagem hero */
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10rem; 
+    z-index: -1;
+    
+}
+
+.background-square {
+    position: absolute;
+    top: 10%; /* Ajuste conforme necessário */
+    left: 25%; /* Ajuste conforme necessário */
+    right: 15%;
+    width: 60rem; /* Largura do quadrado */
+    height: 40rem; /* Altura do quadrado */
+    background-color: #94B7EB; /* Cor azul claro */
+    z-index: -1; /* Garante que fique atrás da imagem */
+    overflow-x: hidden;
+    
+}
+
+.hero-image {
+    width: 80rem;
+    height: 80rem;
+    height: auto;
+    display: block;
+    z-index: -1;
+}
+.s1 {
+    background-color: #F5F5F5;
+    padding: 1rem;
+    padding-bottom: 0;
+    margin: 3rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+a {
+    text-decoration: none; /* Remove o sublinhado padrão */
+    transition: color 0.3s, text-decoration-color 0.3s; /* Suaviza a transição de cores e sublinhado */
+    text-decoration-line: underline; /* Adiciona sublinhado */
+    text-decoration-color: transparent; /* Torna o sublinhado transparente inicialmente */
+    text-decoration-style: solid; /* Estilo do sublinhado */
+}
+  
+a:hover {
+    color: #FF5733; /* Cor quando o mouse está sobre o link */
+    text-decoration-color: #FF5733; /* Torna o sublinhado visível e na mesma cor do texto ao passar o mouse */
+}
+
+button[type="button"] {
+    
+    color: white; /* Cor do texto */
+    border: none; /* Sem borda */
+    padding: 10px 20px; /* Espaçamento interno */
+    font-size: 1.5rem; /* Tamanho do texto */
+    cursor: pointer; /* Cursor do mouse como ponteiro */
+    transition: background-color 0.3s, box-shadow 0.3s; /* Suaviza a transição de cor de fundo e sombra */
+    outline: none; /* Remove o contorno ao focar */
+    
+    margin: 0;
+    margin-top: 1rem;
+    
+    
+  }
+
+  button[type="button"]:hover {
+    background-color: #FF5733; /* Cor de fundo ao passar o mouse */
+    box-shadow: 0 0 8px #FF5733; /* Sombra ao redor do botão */
+  }
+  
+  button[type="button"]:active {
+    background-color: #C4421A; /* Cor de fundo ao clicar */
+    box-shadow: 0 0 12px #FF5733 inset; /* Sombra interna para efeito de "pressionado" */
+  }
+
+  button {
+    padding: 0.5rem;
+    margin: 0.5rem;
+    
+    border: 1px solid #d9d9d9;
+    background-color: #072A86;
+    color: white;
+    font-family: 'Julius Sans One', sans-serif;
+    font-weight: bold;
+}
+@media (max-width: 1300px) {
+    .hero-image {
+        width: 60rem;
+        height: 40rem;
+    }
+}
+@media (max-width: 1400px) {
+    .mulher_perfil {
+        max-height: 40rem;
+        
+    }
+    .d2 {
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+}
+
+p {
+    font-family: 'Jura', 'sans-serif';
+    font-size: 1.3rem;
+    margin-bottom: 1.7rem;
+    text-align: justify;
+}
+
+
+.s2 {
+    display: flex;
+    flex-direction: row;
+    
+    align-items:center;
+    position: relative;
+    margin: 10rem;
+    margin-top: 10rem;
+    margin-bottom: 10rem;
+
+}
+span {
+    align-items: center;
+    justify-content: center;
+    padding-top: 1rem;
+
+}
+.span_dra {
+    background-color: #d9d9d9;
+    padding: 2rem;
+    padding-left: 10rem;
+}
+h1 {
+    font-family: 'Julius Sans One', sans-serif;
+    font-style: normal;
+    font-size: 3rem;
+    margin: 0;
+}
+
+
+.d2 {
+    display: flex;
+    flex-direction: row;
+}
+
+
+
+a {
+    font-family: 'Julius Sans One', sans-serif;
+    font-size: 1.1rem;
+}
+.saiba_mais {
+    padding: 0.5rem;
+    color: #F5F5F5;
+    font-style: normal;
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
+.dra {
+    transform: translateX(20%);
+}
+
+.d3 {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    position: relative;
+    
+}
+
+.agendamentos img {
+    width: 80%;
+    height: auto;
+}
+.agendamentos {
+    display: flex;
+    justify-content: center;
+    z-index: -1;
+}
+
+.qAzulEscuro {
+    position: absolute;
+    
+    left: 15%; /* Ajuste conforme necessário */
+    width: 70rem; /* Largura do quadrado */
+    height: 27rem; /* Altura do quadrado */
+    background-color: #072A86; /* Cor azul claro */
+    z-index: -1; /* Garante que fique atrás da imagem */
+    overflow-x: hidden;
+}
+@media (max-width: 1360px) {
+    .qAzulEscuro {
+        width: 70rem; /* Aumenta o tamanho para telas menores */
+        left: 10%; /* Ajuste a posição para se adaptar melhor */
+    }
+    .s2 {
+        margin: 5rem;
+        margin-top: 10rem;
+    }	
+}
+@media (max-width: 1250px) {
+    .qAzulEscuro {
+        width: 70rem; /* Aumenta o tamanho para telas menores */
+        left: 5%; /* Ajuste a posição para se adaptar melhor */
+    }
+}
+@media (max-width: 1190px) {
+    .qAzulEscuro {
+        width: 35rem; /* Aumenta o tamanho para telas menores */
+        left: 30%; /* Ajuste a posição para se adaptar melhor */
+    }
+    .retirada {
+        display: none;
+    }
+    .background-square {
+        width: 55rem;
+        left: 20%;
+
+    }
+    .s2 {
+        margin: 2rem;
+        margin-top: 10rem;
+        margin-bottom: 10rem;
+    }
+    .d3 {
+        flex-direction: column;
+    }	
+}
+@media (max-width: 1100px) {
+    .background-square {
+        
+        left: 10%; /* Ajuste a posição para se adaptar melhor */
+    
+    }
+}
+@media (max-width: 1000px) {
+    .hero-image {
+        /* queria tornar a imagem responsiva, mas não consegui */
+        /* essa imagem nao diminui quando eu diminuo a pagina, resolvam isso por favor */
+        width: 40rem;
+        
+
+
+    }
+    .background-square {
+        /* queria tornar o quadrado azul responsivo, mas não consegui */
+        width: 40rem;
+        height: 25rem;
+        left: 20%;
+
+    }
+    .s2 {
+        flex-direction: column;
+    }
+    .span_dra {
+        padding-left: 4rem;
+    }
+    .dra {
+        transform: translateX(0%);
+    }
+    
+}
+@media (max-width: 810px) {
+    .agendamentos {
+        transform: translateY(-10%);
+    }
+    .background-square {
+        width: 35rem; /* Aumenta o tamanho para telas menores */
+        left: 15%; /* Ajuste a posição para se adaptar melhor */
+    }
+    .mulher_perfil {
+        max-height: 30rem;
+    }
+    .qAzulEscuro {
+        width: 35rem; /* Aumenta o tamanho para telas menores */
+        left: 15%; /* Ajuste a posição para se adaptar melhor */
+    
+    }
+    h1 {
+        font-size: 2rem;
+    }
+    p {
+        font-size: 1.2rem;
+    }
+}
+@media (max-width: 740px) {
+    .navigation a {
+        display: none;
+    
+    }
+}
+@media (max-width: 660px) {
+    .background-square {
+        width: 30rem; /* Aumenta o tamanho para telas menores */
+        left: 15%; /* Ajuste a posição para se adaptar melhor */
+        height: 20rem;
+    }
+    .hero-image {
+        width: 30rem;
+    }
+    .qAzulEscuro {
+        width: 30rem; /* Aumenta o tamanho para telas menores */
+        height: 20rem;
+        left: 10%; /* Ajuste a posição para se adaptar melhor */
+    }
+    .s2 {
+        margin: 2rem;
+        margin-top: 10rem;
+        margin-bottom: 10rem;
+    }
+    .span_dra {
+        padding-left: 2rem;
+    }
+    .dra {
+        transform: translateX(0%);
+    }
+    .d2 {
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+    .s1 {
+        margin: 2rem;
+    }
+    .hero {
+        margin-bottom: 10rem;
+    }
+    .agendamentos {
+        margin-right: 2rem;
+        margin-left: 2rem;
+    }
+    .agendamentos img {
+        width: 30rem;
+        height: 20rem;
+    }
+    .d3 {
+        margin: 2rem;
+    }
+    .mulher_perfil  {
+        max-height: 25rem;
+    }
+}
+
+.consulta {
+    
+    position: absolute;
+    z-index: 3;
+}
+
+.final {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 4rem;
+}
+.logo_final {
+    height: 15rem;
+    width: 15rem;
+    margin-bottom: 4rem;
+}
+
+.nav_final {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.nav_final img {
+    margin-left: 2rem;
+    margin-right: 2rem;
+    width: 2rem;
+    height: 2rem;
+}
+
+footer {
+    z-index: 10;
+    background-color: #94B7EB;
+    margin-top: 5rem;
+    position: relative;
+}
+
+li {
+    font-family: 'Jura', sans-serif;
+    text-decoration: none;
+    color: #072A86;
+}
+.title {
+    font-family: 'Julius Sans One', sans-serif;
+    font-weight: bold;
+}
+ul {
+    list-style: none;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    z-index: 10;
+}
+@media (max-width: 600px) {
+    .background-square {
+        left: 5%;
+    }
+    .agendamentos img {
+        width: 25rem;
+        height: auto;
+    }
+    .qAzulEscuro {
+        width: 25rem;
+        height: 17rem;
+        left: 10%;
+    }
+    .footer-container {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: space-around;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+}
+@media (max-width: 510px) {
+    .background-square {
+        left: 5%;
+        width: 25rem;
+        height: 17rem;
+
+    }
+    .hero-image {
+        width: 25rem;
+    }
+    .mulher_perfil {
+        max-width: 25rem;
+    }
+    .logo_final {
+        height: 10rem;
+        width: 10rem;
+    }
+    .dra {
+        max-width: 20rem;
+    }
+    
+}
+@media (max-width: 465px) {
+
+    .mulher_perfil {
+        max-width: 18rem;
+    }
+    .qAzulEscuro {
+        width: 20rem;
+        height: 13rem;
+        left: 5%;
+    }
+    .agendamentos img {
+        width: 20rem;
+        height: auto;
+    }
+    h1 {
+        font-size: 1.5rem;
+    }
+    p {
+        font-size: 1rem;
+    }
+    .saiba_mais {
+        font-size: 1.2rem;
+    
+    }
+    .hero-image {
+        width: 20rem;
+
+    }
+    .background-square {
+        width: 20rem;
+        height: 13rem;
+        left: 5%;
+    }
+    .dra {
+        max-width: 18rem;
+    
+    }
+    .login-area a {
+        font-size: 0.8rem;
+    
+    }
+    .d3 {
+        margin: 0;
+    
+    }
+    .nav_final img {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+
+}
+/* insira aqui abaixo os códigos css que eu adicionei no arquivo sobre nos sobre o header e o footer, que fazem parte das condicionais de media */
+
+@media (max-width: 700px) {
+    .footer-section {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+    }
+    .navigation {
+        display: none;
+    }
+}
+h3 {
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+}
+
+a {
+    text-decoration: none; /* Remove o sublinhado padrão */
+    transition: color 0.3s, text-decoration-color 0.3s; /* Suaviza a transição de cores e sublinhado */
+    text-decoration-line: underline; /* Adiciona sublinhado */
+    text-decoration-color: transparent; /* Torna o sublinhado transparente inicialmente */
+    text-decoration-style: solid; /* Estilo do sublinhado */
+  }
+  
+a:hover {
+color: #FF5733; /* Cor quando o mouse está sobre o link */
+text-decoration-color: #FF5733; /* Torna o sublinhado visível e na mesma cor do texto ao passar o mouse */
+}
