@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Site</title>
+    <title>Clínica TN</title>
+    <link rel="icon" href="img/logo.png">
     <!-- Estilos CSS podem ser adicionados aqui -->
     <link rel="stylesheet" href="css/agendamento2.css">
 </head>
@@ -208,19 +209,18 @@
             var procedureName = procedure.querySelector('h3').textContent;
             var procedurePrice = parseFloat(procedure.querySelector('p').textContent.replace('Preço: R$ ', ''));
     
-            selectedProceduresText += procedureName + ', ';
+            
             totalPrice += procedurePrice;
         }
 
         
     
-        var selectedDay = document.querySelector('.calendar-table td[style="background-color: lightblue;"]');
+        var selectedDay = localStorage.getItem('selectedDay');
         
-        console.log(selectedDay.textContent, selectedTime.textContent)
         var summary = {
-            procedimento: selectedProceduresText,
+            procedimento: procedureName,
             preco: totalPrice,
-            date: selectedDay.textContent
+            data: selectedDay + '/05/2024'
         };
     
         localStorage.setItem('consultaAdicionada', JSON.stringify(summary));
@@ -265,6 +265,7 @@
                 // Code to handle the click event and select/deselect the day for the appointment
                 var selectedDay = this.textContent;
                 console.log('Selected day:', selectedDay);
+                localStorage.setItem('selectedDay', selectedDay);
                 // Add your code to change the design or behavior when a day is clicked
                 if (this.style.backgroundColor === 'lightblue') {
                     this.style.backgroundColor = ''; // Deselect the day

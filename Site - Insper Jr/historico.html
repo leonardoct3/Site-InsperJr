@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Site</title>
+    <title>Clínica TN</title>
+    <link rel="icon" href="img/logo.png">
     <!-- Estilos CSS podem ser adicionados aqui -->
     <link rel="stylesheet" href="css/historico.css">
 </head>
@@ -129,13 +130,12 @@
 
         const consultaAdicionada = getConsultaAdicionada();
         if (consultaAdicionada) {
-            const tabelaConsultas = document.querySelector('.historico table');
+            const tabelaConsultas = document.querySelector('.agendados table');
             const newRow = tabelaConsultas.insertRow();
             newRow.innerHTML = `
                 <td>${consultaAdicionada.data}</td>
                 <td>Dra. Tania</td>
                 <td>${consultaAdicionada.procedimento}</td>
-                <td>${consultaAdicionada.resultado}</td>
             `;
         }
     </script>
