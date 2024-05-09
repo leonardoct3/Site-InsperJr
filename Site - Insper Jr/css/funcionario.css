@@ -228,7 +228,7 @@ main {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: start;
     
     background-size: cover;
     background-repeat: no-repeat;
@@ -364,4 +364,11 @@ button[type="button"] {
     .logo_header {
         display: none;
     }
+}
+
+.login_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
 }
