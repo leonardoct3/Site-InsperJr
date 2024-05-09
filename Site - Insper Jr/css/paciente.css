@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Jura:wght@400;500;600&display=swap');
 
+html, body {
+    scroll-behavior: smooth;
+}
 .sidebar {
     display: none;
     justify-content: center;
@@ -237,16 +240,16 @@ main {
 
 body {
     margin: 0;
-    min-width: none;
-    min-height: none;
-    flex-wrap: wrap;
+    
 }
 
 body {
-    background-image: url('/img/login-cadastro.png');
-    background-position: bottom right;
-    background-repeat: no-repeat;
-    background-position: cover;
+    background-image: url('login-cadastro.png');
+    background-size: cover; /* Cobrir toda a área disponível */
+    background-position: center; /* Centralizar a imagem */
+    background-repeat: no-repeat; /* Não repetir a imagem */
+    min-height: 100vh; /* Altura mínima para garantir que cubra a tela */
+
 }
 .esqueceu {
     font-family: 'Julius Sans One', sans-serif;

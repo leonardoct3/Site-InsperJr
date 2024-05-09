@@ -262,6 +262,7 @@ a:hover {
     align-items: center;
 }
 .boas_vindas img {
+    height: 5rem;
     width: auto;
     margin-right: 1rem;
 }
@@ -599,7 +600,7 @@ button[type="submit"] {
 
 
   button[type="button"] {
-    background-color: red;
+    
     color: white; /* Cor do texto */
     border: none; /* Sem borda */
     padding: 10px 20px; /* Espaçamento interno */
@@ -639,3 +640,12 @@ form {
     margin: 2rem;
 }
 
+.azul {
+    background-color: #072A86;
+    color: white;
+}
+
+.vermelho {
+    background-color: #FF5733;
+    color: white;
+}

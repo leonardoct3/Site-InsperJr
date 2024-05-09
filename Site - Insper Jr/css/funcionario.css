@@ -245,7 +245,7 @@ body {
 }
 
 body {
-    background-image: url('/img/login-cadastro.png');
+    background-image: url('login-cadastro.png');
     background-position: bottom right;
     background-repeat: no-repeat;
 }
