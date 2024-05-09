@@ -258,8 +258,8 @@ a:hover {
     align-items: center;
 }
 .boas_vindas img {
-    width: 10%;
-    height: 10%;
+    width: 5rem;
+    height: auto;
     margin-right: 1rem;
 }
 
